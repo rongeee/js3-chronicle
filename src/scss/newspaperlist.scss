@@ -1,0 +1,11 @@
+.newspaperlist {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 2em;
+  &__paper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border: 1px solid black;
+  }
+}
