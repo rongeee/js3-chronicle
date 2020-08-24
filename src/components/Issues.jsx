@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Issues({ id, date, issueURL }) {
+export default function Issues({ id, date, issueURL, paperID }) {
   return (
     <div className="newspaperlist__paper">
       <p>{id}</p>
@@ -9,11 +9,11 @@ export default function Issues({ id, date, issueURL }) {
       <p>{issueURL}</p>
       <Link
         to={{
-          pathname: `/paper/${id}`,
-          // url: url,
+          pathname: `/paper/${paperID}/issue/${id}`,
+          issueURL: issueURL,
         }}
       >
-        View
+        Pages
       </Link>
     </div>
   );

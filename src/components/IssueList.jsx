@@ -2,9 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Issues from "./Issues";
 
-export default function NewsPaperv2(props) {
+export default function IssueList(props) {
   let [paperData, setPaperData] = useState([]);
 
+  const paperID = props.match.params.id;
   const fetchPaper = () => {
     const paperURL = props.location.url;
     fetch(paperURL)
@@ -23,7 +24,13 @@ export default function NewsPaperv2(props) {
       <div className="newspaperlist">
         {paperData.map((item, index) => {
           return (
-            <Issues id={index} date={item.date_issued} issueURL={item.url} />
+            <Issues
+              key={index}
+              id={index}
+              date={item.date_issued}
+              issueURL={item.url}
+              paperID={paperID}
+            />
           );
         })}
       </div>
