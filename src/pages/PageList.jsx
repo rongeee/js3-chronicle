@@ -1,13 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Page from "./Page";
+import Page from "../components/Page";
 
 export default function IssueList(props) {
   let [pageHeader, setPageHeader] = useState({});
   let [pageData, setPageData] = useState([]);
   console.log(props);
 
-  const paperID = props.match.params.id;
   const fetchPages = () => {
     const pageURL = props.location.issueURL;
     fetch(pageURL)
@@ -20,7 +19,7 @@ export default function IssueList(props) {
 
   useEffect(() => {
     fetchPages();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

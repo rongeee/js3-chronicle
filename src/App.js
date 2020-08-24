@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import NewspaperList from "./components/NewspaperList";
-import IssueList from "./components/IssueList";
-import PageList from "./components/PageList";
+import NewspaperList from "./pages/NewspaperList";
+import IssueList from "./pages/IssueList";
+import PageList from "./pages/PageList";
 
 function App() {
   return (

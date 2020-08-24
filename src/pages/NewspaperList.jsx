@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import NewsPaper from "./NewsPaper";
+import NewsPaper from "../components/NewsPaper";
 
 export default function NewspaperList() {
   let [newsList, setNewsList] = useState([]);
@@ -19,10 +19,12 @@ export default function NewspaperList() {
 
   return (
     <div className="main">
+      <h1>Newspapers</h1>
       <div className="newspaperlist">
         {newsList.map((item, index) => {
           return (
             <NewsPaper
+              key={index}
               id={index}
               title={item.title}
               state={item.state}
